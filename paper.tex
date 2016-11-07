@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{biblatex}
+\addbibresource{cite.bib}
+
+\title{Interactive Tracking and Visualization of Neural Development in 4D Microscopy Image}
+\author{Tri Huynh}
+\date{October 2016}
+
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+\begin{itemize}
+    \item 
+    Microscopy data has become a crucial tool allowing scientists to capture and measure cell-level structure and development of biological subjects. One of the essential tasks is being able to visualize the trajectory of neurons in the context of surrounding structures to discover the lineage and dynamics of neural development. This is a challenging task since data comes in a complex form, with up to 5 dimensions, while our world space only exists in 3D, and the limit of our eyes as well as display screen only allows us to view the world in 2D at a time. The task of being able to extract, connect meaningful structures and effectively visualize this data to help scientists having a whole picture for advancing novel discoveries remained an unsolved problem.
+    \item 
+    One required source of input for this system is the tracked locations of neurons. This is a challenging and an active research problem. Automatic tracking still suffers from noise and inaccuracy, while manual tracking requires deliberate labor yet still suffers from human limit in estimating the correct quantitative center of mass of the object and usually results in the fluctuating, non-smooth trajectory.
+\end{itemize}
+
+\section{Proposed Solution}
+Based on the above problems and limitations, we propose a new interactive system to track and visualize neural development in 4D microscopy data. Some essential capabilities are as following:
+\begin{itemize}
+    \item
+    The system allows interactive tracking to combine both automatic and manual efforts for an accurate tracking result. The system first performs automatic tracking of the objects indicated by users and visualizes the tracked results. Users can then examine and correct the parts which are not accurate. Based on the feedback, the system then updates the tracking to leverage both machine and human capabilities.
+    \item
+    Since the trajectory of neural migration is central to the measurement, we propose to base our visualization on this information. We use the trajectory of the pioneering neuron in place of the time-line. Each time-point corresponds to one position of the pioneering neuron along its trajectory. We visualize the whole path of the trajectory with landmark to indicate which point we are currently at. At each specific location along the trajectory, we visualize the whole volume corresponding to that time-point. As users move to other parts along the trajectory, the visualized volume changes accordingly.
+    \item
+    The visualization of the trajectory should be a kind of alpha-blending, to not occlude other parts of the visualized volume.
+    \item
+    Users should be able to interactively control and rotate the view to be able to have more insight into the data.
+    \item
+    There should be different options of different methods for visualizing the volume (could be simultaneously displayed in multiple windows) allowing users to have a more complete view of the data. It is best if the volume visualization can provide the cue of depth (as opposed to methods such as MIP which loses this information).\\
+    \item
+    (Some unconventional idea: utilizing virtual reality to navigate through the volume data)\\
+    (Further refining needed...)\\
+    (example images of the prototype to come...)
+    
+\end{itemize}
+
+\end{document}
